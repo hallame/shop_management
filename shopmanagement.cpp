@@ -37,7 +37,7 @@ void addTop(product *& top, product newproduct)
     return;
 }
 
-// Выводит на экран всю информацию о каждом элементе
+// Printing informations of each element
 void printList(product *top)
 {
     if ( top == NULL )
