@@ -9,12 +9,10 @@ struct product {
     string name;
     float price;
     int amount;
-    //указатель на следующий по порядку элемент
+    
     product *next;
 };
 
-// Добавляет элемент в начало списка
-// Создает первую запись о товаре, если список пустой
 void addTop(product *& top, product newproduct)
 {
     product* tmp = top;
@@ -56,7 +54,6 @@ void printList(product *top)
 }
 
 
-// Выводит на экран всю информацию об одном выбранном элементе
 void printEle(product *& top, string Elename)
 {
     if (top == NULL)
@@ -81,7 +78,7 @@ void printEle(product *& top, string Elename)
 
 
 
-// Добавляет новый элемент в конец списка
+
 void addLast(product *& top, product newproduct)
 {
     product *tmp = top;
@@ -112,7 +109,7 @@ void addLast(product *& top, product newproduct)
 }
 
 
-// Вставляет новый элемент сразу после выбранного элемента
+
 int addAfter(product *top, product newproduct, string nameAfter)
 {
     if ( top == NULL )
@@ -147,7 +144,7 @@ int addAfter(product *top, product newproduct, string nameAfter)
     return 0;
 }
 
-// Вставляет новый элемент перед выбранным элементом
+
 int addBefore(product *top, product newproduct, string nameBefore)
 {
     if ( top == NULL )
@@ -194,7 +191,7 @@ int addBefore(product *top, product newproduct, string nameBefore)
 
 
 
-// Удаляет выбранный элемент из списка
+
 int del(product *& top, string delname)
 {
     if (top == NULL )
@@ -260,11 +257,11 @@ int main(){
             } else{
                 switch(k){
                     case 0:{
-                        //Выходим из цикла
+                        
                         return 0;
                     }
                     case 1:{
-                        // Реализуем логику добавления элемента в конец списка
+                        
                         cout << "New product name: ";
                         cin >> tmp.name;
                         cout << "Price of a new product: ";
@@ -276,7 +273,7 @@ int main(){
                         break;
                     }
                     case 2:{
-                        // Реализуем логику добавления элемента в начало списка
+                        
                         cout << "New product name: ";
                         cin >> tmp.name;
                         cout << "Price of a new product: ";
@@ -289,7 +286,7 @@ int main(){
                     }
 
                     case 3:{
-                        // Реализуем логику удаления элемента из списка
+                        
                         cout << "Name of the item you want to delete:";
                         cin >> newname;
                         del(bufet, newname);
@@ -297,7 +294,7 @@ int main(){
                         break;
                     }
                     case 4:{
-                        // Просим пользователя выбрать элемент (например, ввести название)
+                        
                         cout << "Name of the item after which you want to add new one:";
                         cin >> newname;
                         cout << "New product name: ";
@@ -311,7 +308,7 @@ int main(){
                         break;
                     }
                     case 5:{
-                        // Просим пользователя выбрать элемент (например, ввести название)
+                        
                         cout << "Name of the item before which you want to add new one:";
                         cin >> newname;
                         cout << "Name of a new product: ";
@@ -325,16 +322,16 @@ int main(){
                         break;
                     }
                     case 6:{
-                        // Просим пользователя выбрать элемент (например, ввести название)
+                        
                         cout << "Enter the name of the element about which you want to get information:";
                         cin >> newname;
-                        // Выводим на экран информацию о выбранном элементе
+                        
                         printEle(bufet, newname);
                         k = 100;
                         break;
                     }
                     case 7:{
-                        // Выводим на экран информацию о всех элементах списка
+                        
                         printList(bufet);
                         k = 100;
                         break;
